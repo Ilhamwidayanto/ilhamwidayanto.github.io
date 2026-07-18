@@ -207,8 +207,23 @@ h6 {
 
 @media (min-width: 1200px) {
 
+  .header {
+    left: -300px;
+    transition: all 0.3s;
+  }
+
+  .header.header-show {
+    left: 0;
+  }
+
   .header~main,
   .header~#footer {
+    margin-left: 0;
+    transition: all 0.3s;
+  }
+
+  .header.header-show~main,
+  .header.header-show~#footer {
     margin-left: 300px;
   }
 }
@@ -223,21 +238,22 @@ h6 {
   left: 0;
 }
 
-.header .header-toggle {
+.header-toggle {
   color: var(--contrast-color);
   background-color: var(--accent-color);
   font-size: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  cursor: pointer;
   position: fixed;
   top: 15px;
-  right: 15px;
-  z-index: 9999;
+  left: 15px;
+  right: auto;
+  z-index: 9997;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background-color 0.3s;
 }
 
